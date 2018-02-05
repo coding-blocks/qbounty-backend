@@ -1,0 +1,26 @@
+{
+  "name": "qbounty-backend",
+  "version": "0.1.0",
+  "description": "qBounty Backend",
+  "main": "index.js",
+  "dependencies": {
+    "@coding-blocks/jsonapi-server": "^5.4.3",
+    "@coding-blocks/jsonapi-store-sequelize": "^5.2.2",
+    "pg": "^6.4.2",
+    "pg-hstore": "^2.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": " "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coding-blocks/qbounty-backend.git"
+  },
+  "author": "Arnav Gupta <a@cb.lk>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coding-blocks/qbounty-backend/issues"
+  },
+  "homepage": "https://github.com/coding-blocks/qbounty-backend#readme"
+}
