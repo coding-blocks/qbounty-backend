@@ -1,5 +1,6 @@
 const config = require('../config')
-const jsonAPI = require('@coding-blocks/jsonapi-server')
+const jsonAPI = require('jagapi')
+const debug = require('debug')('qbounty')
 
 jsonAPI.setConfig({
     graphiql: true,
@@ -32,9 +33,17 @@ jsonAPI.authenticate((req, cb) => {
 })
 
 jsonAPI.metrics.on('data', data => {
-    debug('metrics')(data)
+    debug(data)
 })
 
+/**
+ * Import all models
+ */
+require('./models')
+
+/**
+ * @type {{server: *, start: *, close: *}}
+ */
 exports = module.exports = {
     server: jsonAPI.getExpressServer(),
     start: jsonAPI.start,
