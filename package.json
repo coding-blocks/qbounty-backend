@@ -1,6 +1,6 @@
 {
   "name": "qbounty-backend",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "qBounty Backend",
   "dependencies": {
     "debug": "^3.1.0",
