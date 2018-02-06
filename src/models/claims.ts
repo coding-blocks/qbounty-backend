@@ -1,18 +1,16 @@
-const jsonApi = require('jagapi')
-const sqlHandler = require('../handlers/sequelize').createHandler()
+import jsonApi = require('jagapi')
+import {createHandler} from '../handlers/sequelize'
 const Joi = jsonApi.Joi
+const sqlHandler = createHandler()
 
 jsonApi.define({
   namespace: 'json:api',
-  resource: 'tasks',
+  resource: 'claims',
   handlers: sqlHandler,
   primaryKey: 'autoincrement',
   attributes: {
     id: Joi.string(),
-    title: Joi.string().required(),
-    description: Joi.string(),
-    instances: Joi.number().integer().min(1).default(1),
-    owner: Joi.one('users').uidType('autoincrement')
+    claimant: Joi.one('users').uidType('autoincrement').required()
   },
   examples: [
     {

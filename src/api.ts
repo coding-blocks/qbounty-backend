@@ -1,6 +1,8 @@
-const config = require('../config')
-const jsonAPI = require('jagapi')
-const debug = require('debug')('qbounty')
+import dbg = require('debug')
+import jsonAPI = require('jagapi')
+import config = require('../config')
+
+const debug = dbg('qbounty')
 
 jsonAPI.setConfig({
   graphiql: true,
@@ -10,7 +12,7 @@ jsonAPI.setConfig({
   port: config.SERVER.PORT,
   base: 'api',
   meta: {
-    description: config.INFO.DESC
+    description: config.INFO.DESC,
   },
   swagger: {
     title: config.INFO.TITLE,
@@ -19,22 +21,22 @@ jsonAPI.setConfig({
     contact: {
       name: config.INFO.CONTACT.NAME,
       email: config.INFO.CONTACT.EMAIL,
-      url: config.INFO.CONTACT.URL
+      url: config.INFO.CONTACT.URL,
     },
     license: {
       name: 'MIT',
-      url: 'http://opensource.org/licenses/MIT'
-    }
-  }
+      url: 'http://opensource.org/licenses/MIT',
+    },
+  },
 })
 
 jsonAPI.authenticate((req, cb) => {
   return cb()
 })
 
-jsonAPI.metrics.on('data', data => {
-  debug(data)
-})
+// jsonAPI.metrics.on('data', (data) => {
+//   debug(data)
+// })
 
 /**
  * Import all models
@@ -44,8 +46,6 @@ require('./models')
 /**
  * @type {{server: *, start: *, close: *}}
  */
-exports = module.exports = {
-  server: jsonAPI.getExpressServer(),
-  start: jsonAPI.start,
-  close: jsonAPI.close
-}
+export const server = jsonAPI.getExpressServer()
+export const start = jsonAPI.start
+export const close = jsonAPI.close

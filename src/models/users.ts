@@ -1,6 +1,7 @@
-const jsonApi = require('jagapi')
-const sqlHandler = require('../handlers/sequelize').createHandler()
+import jsonApi = require('jagapi')
+import {createHandler} from '../handlers/sequelize'
 const Joi = jsonApi.Joi
+const sqlHandler = createHandler()
 
 jsonApi.define({
   namespace: 'json:api',

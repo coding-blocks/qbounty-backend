@@ -1,8 +1,10 @@
-const SQLStore = require('jagapi-sequelize')
-const debug = require('debug')('qbounty:sql')
-const config = require('../../config')
+import dbg = require('debug')
+import SQLStore = require('jagapi-sequelize')
+import config = require('../../config')
 
-const createHandler = () => new SQLStore({
+const debug = dbg('qbounty:sql')
+
+export const createHandler = () => new SQLStore({
   dialect: config.DB.DB_DIALECT,
   host: config.DB.DB_HOST,
   port: config.DB.DB_PORT,
@@ -11,7 +13,3 @@ const createHandler = () => new SQLStore({
   password: config.DB.DB_PASS,
   logging: debug
 })
-
-exports = module.exports = {
-  createHandler
-}
