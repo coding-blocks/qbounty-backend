@@ -6,10 +6,10 @@ const graphiql = require('express-graphiql-toolbox')
  * To serve a Swagger UI Console
  */
 api.server.use('/docs', swaggerUi.serve,
-    swaggerUi.setup(
-        null, true, null, null, null,
-        '/api/swagger.json', 'qBounty API Docs'
-    )
+  swaggerUi.setup(
+    null, true, null, null, null,
+    '/api/swagger.json', 'qBounty API Docs'
+  )
 )
 
 /**
