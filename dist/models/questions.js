@@ -6,27 +6,22 @@ const Joi = jsonApi.Joi;
 const sqlHandler = sequelize_1.createHandler();
 jsonApi.define({
     namespace: 'json:api',
-    resource: 'claims',
+    resource: 'questions',
     handlers: sqlHandler,
     primaryKey: 'autoincrement',
     attributes: {
         id: Joi.string(),
-        claimant: Joi.one('users').uidType('autoincrement').required(),
-        task: Joi.one('tasks').uidType('autoincrement').required(),
-        question: Joi.one('questions').uidType('autoincrement').required()
+        title: Joi.string().required(),
+        description: Joi.string().required(),
+        sampleInput: Joi.string(),
+        sampleOutput: Joi.string(),
+        solution: Joi.string(),
     },
     examples: [
         {
-            type: 'claims',
-            claimant: {
-                id: '1', type: 'users'
-            },
-            task: {
-                id: '1', type: 'tasks'
-            },
-            question: {
-                id: '1', type: 'questions'
-            }
+            type: 'questions',
+            title: 'N-Queens Sample Problem',
+            description: 'a'
         }
     ]
 });
@@ -34,4 +29,4 @@ jsonApi.define({
  * @param force set to true only for dev mode (drops tables)
  */
 sqlHandler.populate({ force: true });
-//# sourceMappingURL=claims.js.map
+//# sourceMappingURL=questions.js.map

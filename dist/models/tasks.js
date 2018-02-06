@@ -14,7 +14,9 @@ jsonApi.define({
         title: Joi.string().required(),
         description: Joi.string(),
         instances: Joi.number().integer().min(1).default(1),
-        owner: Joi.one('users').uidType('autoincrement')
+        owner: Joi.one('users').uidType('autoincrement'),
+        bounty: Joi.number().min(0).max(1000).required().default(100),
+        infolinks: Joi.array().items(Joi.string().uri({ scheme: ['http', 'https'] }))
     },
     examples: [
         {
@@ -22,6 +24,7 @@ jsonApi.define({
             title: 'N-Queens Problem',
             description: 'Make a problem from N-Queens',
             instances: 2,
+            bounty: 100,
             owner: {
                 id: '1',
                 type: 'users'
@@ -32,6 +35,7 @@ jsonApi.define({
             title: 'Array 2-sum',
             description: 'Make a problem on Array 2-sum-K',
             instances: 2,
+            bounty: 100,
             owner: {
                 id: '1',
                 type: 'users'
@@ -42,6 +46,7 @@ jsonApi.define({
             title: 'Palindrome Subsequence',
             description: 'Make a question about finding palindromic subsequences',
             instances: 2,
+            bounty: 100,
             owner: {
                 id: '2',
                 type: 'users'

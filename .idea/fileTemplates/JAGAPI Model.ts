@@ -3,26 +3,16 @@ import {createHandler} from '../handlers/sequelize'
 const Joi = jsonApi.Joi
 const sqlHandler = createHandler()
 
-export interface User {
-  id?: string
-  name: string
-}
-
-jsonApi.define<User>({
+jsonApi.define({
   namespace: 'json:api',
-  resource: 'users',
+  resource: '${NAME}',
   handlers: sqlHandler,
   primaryKey: 'autoincrement',
   attributes: {
-    id: Joi.string(),
-    name: Joi.string().required()
+    id: Joi.string()
   },
   examples: [
-    {type: 'users', name: 'Arnav'},
-    {type: 'users', name: 'Prateek'},
-    {type: 'users', name: 'Deepak'},
-    {type: 'users', name: 'Rishab'},
-    {type: 'users', name: 'Garima'}
+    
   ]
 })
 

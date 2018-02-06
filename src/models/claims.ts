@@ -1,46 +1,41 @@
 import jsonApi = require('jagapi')
+import {BaseType} from 'jagapi/types/ResourceConfig'
 import {createHandler} from '../handlers/sequelize'
+import {Question} from './questions'
+import {Task} from './tasks'
+import {User} from './users'
 const Joi = jsonApi.Joi
 const sqlHandler = createHandler()
 
-jsonApi.define({
+export interface Claim {
+  id?: string
+  claimant: User | BaseType
+  task: Task | BaseType
+  question: Question | BaseType
+}
+
+jsonApi.define<Claim>({
   namespace: 'json:api',
   resource: 'claims',
   handlers: sqlHandler,
   primaryKey: 'autoincrement',
   attributes: {
     id: Joi.string(),
-    claimant: Joi.one('users').uidType('autoincrement').required()
+    claimant: Joi.one('users').uidType('autoincrement').required(),
+    task: Joi.one('tasks').uidType('autoincrement').required(),
+    question: Joi.one('questions').uidType('autoincrement').required()
   },
   examples: [
     {
-      type: 'tasks',
-      title: 'N-Queens Problem',
-      description: 'Make a problem from N-Queens',
-      instances: 2,
-      owner: {
-        id: '1',
-        type: 'users'
-      }
-    },
-    {
-      type: 'tasks',
-      title: 'Array 2-sum',
-      description: 'Make a problem on Array 2-sum-K',
-      instances: 2,
-      owner: {
-        id: '1',
-        type: 'users'
-      }
-    },
-    {
-      type: 'tasks',
-      title: 'Palindrome Subsequence',
-      description: 'Make a question about finding palindromic subsequences',
-      instances: 2,
-      owner: {
-        id: '2',
-        type: 'users'
+      type: 'claims',
+      claimant: {
+        id: '1', type: 'users'
+      },
+      task: {
+        id: '1', type: 'tasks'
+      },
+      question: {
+        id: '1', type: 'questions'
       }
     }
   ]
