@@ -2,7 +2,6 @@ const jsonApi = require('jagapi')
 const sqlHandler = require('../handlers/sequelize').createHandler()
 const Joi = jsonApi.Joi
 
-
 jsonApi.define({
     namespace: 'json:api',
     resource: 'users',

@@ -19,7 +19,7 @@ jsonAPI.setConfig({
         contact: {
             name: config.INFO.CONTACT.NAME,
             email: config.INFO.CONTACT.EMAIL,
-            url: config.INFO.CONTACT.URL,
+            url: config.INFO.CONTACT.URL
         },
         license: {
             name: 'MIT',

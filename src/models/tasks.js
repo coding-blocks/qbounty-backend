@@ -2,7 +2,6 @@ const jsonApi = require('jagapi')
 const sqlHandler = require('../handlers/sequelize').createHandler()
 const Joi = jsonApi.Joi
 
-
 jsonApi.define({
     namespace: 'json:api',
     resource: 'tasks',
@@ -48,7 +47,6 @@ jsonApi.define({
         }
     ]
 })
-
 
 /**
  * @param force set to true only for dev mode (drops tables)
