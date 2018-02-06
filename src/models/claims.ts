@@ -1,5 +1,5 @@
 import jsonApi = require('jagapi')
-import {BaseType} from 'jagapi/types/ResourceConfig'
+import {BaseType} from 'jagapi'
 import {createHandler} from '../handlers/sequelize'
 import {Question} from './questions'
 import {Task} from './tasks'

@@ -1,1 +1,1 @@
-{"version":3,"file":"index.js","sourceRoot":"/Users/championswimmer/Development/CodingBlocks/NodeJS/qbounty-backend/src/","sources":["models/index.ts"],"names":[],"mappings":"AAAA,OAAO,CAAC,SAAS,CAAC,CAAA;AAClB,OAAO,CAAC,SAAS,CAAC,CAAA"}
+{"version":3,"file":"index.js","sourceRoot":"/Users/championswimmer/Development/CodingBlocks/NodeJS/qbounty-backend/src/","sources":["models/index.ts"],"names":[],"mappings":"AAAA,OAAO,CAAC,SAAS,CAAC,CAAA;AAClB,OAAO,CAAC,SAAS,CAAC,CAAA;AAClB,OAAO,CAAC,aAAa,CAAC,CAAA;AACtB,OAAO,CAAC,UAAU,CAAC,CAAA"}

@@ -1,5 +1,5 @@
 import jsonApi = require('jagapi')
-import {BaseType} from 'jagapi/types/ResourceConfig'
+import {BaseType} from 'jagapi'
 import {createHandler} from '../handlers/sequelize'
 import {User} from './users'
 const Joi = jsonApi.Joi
