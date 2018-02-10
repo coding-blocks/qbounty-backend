@@ -1,6 +1,8 @@
-const api = require('./api');
-const swaggerUi = require('swagger-ui-express');
-const graphiql = require('express-graphiql-toolbox');
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const graphiql = require("express-graphiql-toolbox");
+const swaggerUi = require("swagger-ui-express");
+const api = require("./api");
 /**
  * To serve a Swagger UI Console
  */

@@ -21,7 +21,7 @@ jsonApi.define<Claim>({
   primaryKey: 'autoincrement',
   attributes: {
     id: Joi.string(),
-    claimant: Joi.one('users').uidType('autoincrement').required(),
+    claimant: Joi.one('users', 'tasks').uidType('autoincrement').required(),
     task: Joi.one('tasks').uidType('autoincrement').required(),
     question: Joi.one('questions').uidType('autoincrement').required()
   },

@@ -34,12 +34,13 @@ jsonAPI.authenticate((req, cb) => {
   return cb()
 })
 
-// jsonAPI.metrics.on('data', (data) => {
-//   debug(data)
-// })
+jsonAPI.metrics.on('data', (data) => {
+  debug(`${data.httpCode}: ${data.route}`)
+})
 
+// tslint:disable no-var-requires
 /**
- * Import all models
+ * Require all Models
  */
 require('./models')
 

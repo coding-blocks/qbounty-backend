@@ -11,7 +11,7 @@ export interface Task {
   description: string,
   instances: number,
   owner: User | BaseType,
-  bounty: number,
+  bounty?: number,
   infolinks?: string[]
 }
 
@@ -26,7 +26,7 @@ jsonApi.define<Task>({
     description: Joi.string(),
     instances: Joi.number().integer().min(1).default(1),
     owner: Joi.one('users').uidType('autoincrement'),
-    bounty: Joi.number().min(0).max(1000).required().default(100),
+    bounty: Joi.number().min(0).max(1000).allow(null),
     infolinks: Joi.array().items(Joi.string().uri({scheme: ['http', 'https']}))
   },
   examples: [
@@ -57,7 +57,6 @@ jsonApi.define<Task>({
       title: 'Palindrome Subsequence',
       description: 'Make a question about finding palindromic subsequences',
       instances: 2,
-      bounty: 100,
       owner: {
         id: '2',
         type: 'users'

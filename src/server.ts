@@ -1,6 +1,6 @@
-const api = require('./api')
-const swaggerUi = require('swagger-ui-express')
-const graphiql = require('express-graphiql-toolbox')
+import graphiql = require('express-graphiql-toolbox')
+import swaggerUi = require('swagger-ui-express')
+import api = require('./api')
 
 /**
  * To serve a Swagger UI Console
