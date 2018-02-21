@@ -1,1 +1,0 @@
-{"version":3,"file":"sequelize.js","sourceRoot":"/Users/championswimmer/Development/CodingBlocks/NodeJS/qbounty-backend/src/","sources":["handlers/sequelize.ts"],"names":[],"mappings":";;AAAA,6BAA6B;AAC7B,6CAA6C;AAE7C,8BAA+B;AAE/B,MAAM,KAAK,GAAG,GAAG,CAAC,aAAa,CAAC,CAAA;AAEnB,QAAA,aAAa,GAAG,GAAG,EAAE,CAAC,IAAI,QAAQ,CAAC,EAAC,SAAS,EAAT,cAAS,EAAC,CAAC,CAAA"}
